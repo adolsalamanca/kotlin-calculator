@@ -45,7 +45,7 @@ class CalculatorTest {
         assertEquals(20F, result)
     }
 
-    @Test fun should_crash_divide_by_zero() {
+    @Test fun should_not_crash_divide_by_zero() {
         val calculator = Calculator()
 
         val result = calculator.operation(divide,10F,0F)

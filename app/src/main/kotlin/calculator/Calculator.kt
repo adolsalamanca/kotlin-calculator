@@ -40,7 +40,7 @@ fun main(args: Array<String>) {
         println("Enter the first number")
         first = readLine()?.toFloat() ?: 0F
 
-        println("Enter one operand between the following four: $sum,$subtract,$divide,$multiply,$percentage")
+        println("Enter one operand between the following: $sum,$subtract,$divide,$multiply,$percentage")
         operation = readLine().toString()
 
         println("Enter the second number")
