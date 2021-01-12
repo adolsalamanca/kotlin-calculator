@@ -17,5 +17,5 @@ FROM openjdk:8-jre-alpine
 # Copy the jar to the production image from the builder stage.
 COPY --from=builder /home/gradle/build/libs/calculator.jar .
 
-# Run the web service on container startup.
+# Run the app on container startup.
 CMD [ "java", "-jar", "-Djava.security.egd=file:/dev/./urandom", "/calculator.jar" ]
