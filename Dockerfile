@@ -1,6 +1,6 @@
 # Use the official gradle image to create a build artifact.
 # https://hub.docker.com/_/gradle
-FROM gradle:4.10 as builder
+FROM gradle:4.10 AS builder
 
 # Copy local code to the container image.
 COPY app/build.gradle .
@@ -15,7 +15,7 @@ RUN gradle clean build --no-daemon
 FROM openjdk:8-jre-alpine
 
 # Copy the jar to the production image from the builder stage.
-COPY app/build/libs/calculator.jar /calculator.jar
+COPY --from=builder /home/gradle/build/libs/calculator.jar .
 
 # Run the web service on container startup.
 CMD [ "java", "-jar", "-Djava.security.egd=file:/dev/./urandom", "/calculator.jar" ]

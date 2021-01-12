@@ -30,12 +30,12 @@ gradle test -i
 
 Build the image and run the container application using [Docker](https://www.docker.com/) 
 ```
-./gradlew clean && ./gradlew jar && docker build -t calculator . && docker run -i calculator
+docker build -t calculator . && docker run -i calculator
 ```
 Or 
 If you just want to build the image:
 ```
-./gradlew clean && ./gradlew jar && docker build -t calculator .
+docker build -t calculator .
 ```
 and then 
 run the container as many times as you want (once you have created the image):
@@ -50,7 +50,7 @@ gradle run
 
 Run the application using [Gradle Wrapper](https://docs.gradle.org/current/userguide/gradle_wrapper.html)
 ```
-./gradlew clean && ./gradlew run
+./gradlew run
 ```
 
 ## Author
